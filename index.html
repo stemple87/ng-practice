@@ -5,17 +5,17 @@
     <title>using AngularJS Directives and Data Binding</title>
   </head>
   <body>
-    <div class="container" data-ng-init="names=['Steve', 'John', 'Mary']">
+    <div class="container" data-ng-init="customers=[{name: 'John Smith', city: 'Phoenix'},{name: 'Terery Weirheim', city: 'Atlanta'},{name: 'Sherome Brown', city: 'Montreal'},{name: 'John Woo', city: 'Hong Kong'}]">
         Name:
         <br />
-        <input type="text" data-ng-model="name" /> {{ name }}
+        <input type="text" data-ng-model="name" />
         <br />
         <ul>
-            <li data-ng-repeat="personName in names">{{personName}}</li>
+            <li data-ng-repeat="cust in customers | filter:name">{{cust.name}} - {{cust.city}}</li>
         </ul>
     </div>
 
-    
+
     <script src="scripts/angular.min.js"></script>
   </body>
 </html>
